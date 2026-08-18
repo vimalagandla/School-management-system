@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - School Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+
+        <div class="header-title">
+            Admin Dashboard
+        </div>
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- MAIN LAYOUT -->
+    <div class="main-container">
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-section">
+
+                <h3>Admission</h3>
+
+                <a href="#" onclick="showPage('addStudent')">
+                    Add Student
+                </a>
+
+                <a href="#" onclick="showPage('viewStudent')">
+                    View Student
+                </a>
+
+                <a href="#" onclick="showPage('addTeacher')">
+                    Add Teacher
+                </a>
+
+                <a href="#" onclick="showPage('viewTeacher')">
+                    View Teacher
+                </a>
+
+                <a href="#" onclick="showPage('addCourse')">
+                    Add Courses
+                </a>
+
+                <a href="#" onclick="showPage('viewCourse')">
+                    View Courses
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+        <main class="content">
+
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <section id="dashboard" class="page">
+
+                <h1>Admin Dashboard</h1>
+
+                <div class="dashboard-box">
+
+                    <h2>Welcome to School Management System</h2>
+
+                    <p>
+                        Use the menu on the left to manage students,
+                        teachers and courses.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ADD STUDENT ================= -->
+
+            <section id="addStudent" class="page">
+
+                <h1>Add Student</h1>
+
+                <div class="form-box">
+
+                    <form id="studentForm">
+
+                        <div class="form-row">
+
+                            <label for="studentName">
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="studentName"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label for="studentEmail">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="studentEmail"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label for="studentPhone">
+                                phone
+                            </label>
+
+                            <input
+                                type="text"
+                                id="studentPhone"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label for="studentPassword">
+                                password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="studentPassword"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="button-row">
+
+                            <button
+                                type="submit"
+                                class="green-btn"
+                            >
+                                Add
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= VIEW STUDENTS ================= -->
+
+            <section id="viewStudent" class="page">
+
+                <h1>View Student</h1>
+
+                <div class="table-box">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="studentTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= EDIT STUDENT ================= -->
+
+            <section id="editStudent" class="page">
+
+                <h1>Update Student</h1>
+
+                <div class="form-box">
+
+                    <form id="editStudentForm">
+
+                        <input
+                            type="hidden"
+                            id="editStudentId"
+                        >
+
+
+                        <div class="form-row">
+
+                            <label>
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editStudentName"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="editStudentEmail"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                phone
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editStudentPhone"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="editStudentPassword"
+                            >
+
+                        </div>
+
+
+                        <div class="button-row">
+
+                            <button
+                                type="submit"
+                                class="green-btn"
+                            >
+                                Update
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ADD TEACHER ================= -->
+
+            <section id="addTeacher" class="page">
+
+                <h1>Add Teacher</h1>
+
+                <div class="form-box">
+
+                    <form id="teacherForm">
+
+                        <div class="form-row">
+
+                            <label>
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="teacherName"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="teacherEmail"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                phone
+                            </label>
+
+                            <input
+                                type="text"
+                                id="teacherPhone"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="teacherPassword"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="button-row">
+
+                            <button
+                                type="submit"
+                                class="green-btn"
+                            >
+                                Add
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= VIEW TEACHERS ================= -->
+
+            <section id="viewTeacher" class="page">
+
+                <h1>View Teacher</h1>
+
+                <div class="table-box">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="teacherTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= EDIT TEACHER ================= -->
+
+            <section id="editTeacher" class="page">
+
+                <h1>Update Teacher</h1>
+
+                <div class="form-box">
+
+                    <form id="editTeacherForm">
+
+                        <input
+                            type="hidden"
+                            id="editTeacherId"
+                        >
+
+
+                        <div class="form-row">
+
+                            <label>
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editTeacherName"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="editTeacherEmail"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                phone
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editTeacherPhone"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="editTeacherPassword"
+                            >
+
+                        </div>
+
+
+                        <div class="button-row">
+
+                            <button
+                                type="submit"
+                                class="green-btn"
+                            >
+                                Update
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ADD COURSE ================= -->
+
+            <section id="addCourse" class="page">
+
+                <h1>Add Courses</h1>
+
+                <div class="form-box">
+
+                    <form id="courseForm">
+
+                        <div class="form-row">
+
+                            <label>
+                                Course Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="courseName"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                Course Code
+                            </label>
+
+                            <input
+                                type="text"
+                                id="courseCode"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                Teacher
+                            </label>
+
+                            <input
+                                type="text"
+                                id="courseTeacher"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="button-row">
+
+                            <button
+                                type="submit"
+                                class="green-btn"
+                            >
+                                Add
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= VIEW COURSES ================= -->
+
+            <section id="viewCourse" class="page">
+
+                <h1>View Courses</h1>
+
+                <div class="table-box">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+                                <th>Course Name</th>
+                                <th>Course Code</th>
+                                <th>Teacher</th>
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="courseTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= EDIT COURSE ================= -->
+
+            <section id="editCourse" class="page">
+
+                <h1>Update Course</h1>
+
+                <div class="form-box">
+
+                    <form id="editCourseForm">
+
+                        <input
+                            type="hidden"
+                            id="editCourseId"
+                        >
+
+
+                        <div class="form-row">
+
+                            <label>
+                                Course Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editCourseName"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                Course Code
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editCourseCode"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <label>
+                                Teacher
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editCourseTeacher"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="button-row">
+
+                            <button
+                                type="submit"
+                                class="green-btn"
+                            >
+                                Update
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

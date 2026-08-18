@@ -1,0 +1,459 @@
+/* =========================================
+   BASIC RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+
+/* =========================================
+   TOP HEADER
+========================================= */
+
+.top-header {
+    height: 60px;
+
+    background: #82cee3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    color: #28627a;
+}
+
+
+.header-title {
+    font-size: 14px;
+}
+
+
+.logout-btn {
+    background: #337ab7;
+
+    color: white;
+
+    border: 1px solid #286090;
+
+    border-radius: 4px;
+
+    padding: 7px 15px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+.logout-btn:hover {
+    background: #286090;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.main-container {
+    display: flex;
+
+    min-height: calc(100vh - 60px);
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    width: 187px;
+
+    min-width: 187px;
+
+    background: #454f60;
+
+    color: white;
+
+    min-height: calc(100vh - 60px);
+
+    padding-top: 45px;
+}
+
+
+.sidebar-section h3 {
+    font-size: 15px;
+
+    margin-left: 60px;
+
+    margin-bottom: 15px;
+
+    font-weight: bold;
+}
+
+
+.sidebar a {
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    padding: 10px 0 10px 54px;
+
+    margin-bottom: 2px;
+}
+
+
+.sidebar a:hover {
+    background: #384251;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content {
+    flex: 1;
+
+    background: #ffffff;
+
+    padding: 55px 40px;
+
+    min-width: 0;
+}
+
+
+.page {
+    display: none;
+}
+
+
+.page.active {
+    display: block;
+}
+
+
+.page h1 {
+    text-align: center;
+
+    font-size: 32px;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+
+    color: #222;
+}
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-box {
+    width: 650px;
+
+    max-width: 90%;
+
+    margin: 0 auto;
+
+    background: #82cee3;
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+
+.dashboard-box h2 {
+    font-size: 24px;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+
+.dashboard-box p {
+    font-size: 15px;
+}
+
+
+/* =========================================
+   FORM BOX
+========================================= */
+
+.form-box {
+    width: 340px;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    background: #82cee3;
+
+    padding: 55px 35px;
+}
+
+
+/* =========================================
+   FORM ROW
+========================================= */
+
+.form-row {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+
+.form-row label {
+    width: 105px;
+
+    text-align: right;
+
+    margin-right: 10px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+
+.form-row input,
+.form-row select {
+    width: 150px;
+
+    height: 22px;
+
+    border: 1px solid #aaa;
+
+    background: white;
+
+    padding: 2px 5px;
+
+    font-size: 13px;
+}
+
+
+.form-row input:focus,
+.form-row select:focus {
+    outline: none;
+
+    border-color: #337ab7;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.button-row {
+    text-align: center;
+
+    margin-top: 5px;
+}
+
+
+.green-btn {
+    background: #5cb85c;
+
+    border: 1px solid #4cae4c;
+
+    color: white;
+
+    border-radius: 4px;
+
+    padding: 6px 13px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+.green-btn:hover {
+    background: #449d44;
+
+    border-color: #398439;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-box {
+    width: 90%;
+
+    margin: 0 auto;
+
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+}
+
+
+table th {
+    background: #82cee3;
+
+    color: #222;
+
+    border: 1px solid #6bbbd1;
+
+    padding: 10px;
+
+    font-size: 13px;
+
+    text-align: left;
+}
+
+
+table td {
+    border: 1px solid #ddd;
+
+    padding: 9px;
+
+    font-size: 13px;
+}
+
+
+table tr:nth-child(even) {
+    background: #f7f7f7;
+}
+
+
+/* =========================================
+   TABLE BUTTONS
+========================================= */
+
+.edit-btn {
+    background: #337ab7;
+
+    border: 1px solid #286090;
+
+    color: white;
+
+    padding: 5px 10px;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    margin-right: 5px;
+}
+
+
+.edit-btn:hover {
+    background: #286090;
+}
+
+
+.delete-btn {
+    background: #d9534f;
+
+    border: 1px solid #d43f3a;
+
+    color: white;
+
+    padding: 5px 10px;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+}
+
+
+.delete-btn:hover {
+    background: #c9302c;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        width: 160px;
+
+        min-width: 160px;
+    }
+
+
+    .sidebar-section h3 {
+        margin-left: 35px;
+    }
+
+
+    .sidebar a {
+        padding-left: 30px;
+    }
+
+
+    .content {
+        padding: 35px 15px;
+    }
+
+
+    .page h1 {
+        font-size: 27px;
+    }
+
+
+    .form-box {
+        width: 100%;
+
+        padding: 35px 15px;
+    }
+
+
+    .form-row label {
+        width: 90px;
+    }
+
+
+    .form-row input,
+    .form-row select {
+        width: 150px;
+    }
+
+
+    .table-box {
+        width: 100%;
+    }
+
+}
